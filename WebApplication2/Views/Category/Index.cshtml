@@ -1,0 +1,102 @@
+﻿@model WebApplication2.Controllers.UserCategoryViewModel;
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary"> Categories List </h2>
+        </div>
+        <div class="col-6 text-end">
+             <a asp-controller="Category" asp-action="Creat" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> &nbsp; Add Category
+            </a>
+            
+        </div>
+    </div>
+    <br /> <br />
+    <h3>Index of Categories</h3>
+
+    <table class="table table-bordered table-striped" style="width : 100%">
+
+        <thead>
+            <tr>
+                <th>
+                    Category Name
+                </th>
+                <th>
+                    Category Display Order
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model.Categories)
+            {
+                <tr>
+                    <td width="50%">
+                        @obj.Name
+                    </td>
+                    <td width="30%">
+                        @obj.DisplayOrder
+                    </td>
+                    <td width="30%">
+                        @obj.CreatedDateTime
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+
+</div>
+
+@* <table class="table table-bordered table-striped" style="width : 100%">
+
+    <thead>
+        <tr>
+            <th>
+                Category Name
+            </th>
+            <th>
+                Category Display Order
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model.Users)
+        {
+            <tr>
+                <td width="50%">
+                    @obj.Name
+                </td>
+                <td width="30%">
+                    @obj.Email
+                </td>
+                <td width="30%">
+                    @obj.Password
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table> *@
+
+@* <form asp-action="Index" method="post">
+    <div>
+        <label asp-for=""></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div>
+        <label asp-for="DisplayOrder"></label>
+        <input asp-for="DisplayOrder" />
+        <span asp-validation-for="DisplayOrder"></span>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+ *@
