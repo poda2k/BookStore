@@ -1,10 +1,9 @@
-﻿
-@model Category // here we are passing data from view to controller
+﻿@model Category // here we are passing data from view to controller
 
-<form method="post">
+<form method="post" asp-action="Edit">
 	<div class="border p-3 mt-4">
 		<div class="row pb-2">
-			<h2 class="text-primary">Create Category</h2>
+			<h2 class="text-primary">Edit Category</h2>
 			<hr />
 		</div>
 		<div asp-validation-summary="All"></div>
@@ -13,7 +12,7 @@
 			<input asp-for="Name" class="form-control" />
 			<span asp-validation-for="Name" class="text-danger"></span>
 			<br />
-			<label asp-for="DisplayOrder" ></label>
+			<label asp-for="DisplayOrder"></label>
 			<input asp-for="DisplayOrder" class="form-control" />
 			<span asp-validation-for="DisplayOrder" class="text-danger"></span>
 
@@ -23,12 +22,12 @@
 			Back to Categories
 		</a>
 	</div>
-	
+
 </form>
 
 @section Scripts{
 	@{
-		<partial name="_ValidationScriptsPartial"  />
+		<partial name="_ValidationScriptsPartial" />
 	}
 }
 

@@ -1,6 +1,6 @@
-html {
+/*html {
   font-size: 14px;
-}
+}*/
 
 @media (min-width: 768px) {
   html {
@@ -8,11 +8,27 @@ html {
   }
 }
 
-html {
+/*html {
   position: relative;
   min-height: 100%;
+}*/
+
+/*body {
+  margin-bottom: 60px;
+  background-color : red;
+}*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    margin: 0;
 }
 
-body {
-  margin-bottom: 60px;
+.container {
+    flex: 1; /* Allow the main content to grow and take remaining space */
+}
+.footer {
+    background-color: #333; /* Example background color for the footer */
+    color: white; /* Example text color for the footer */
+    padding: 20px; /* Example padding for the footer */
 }
